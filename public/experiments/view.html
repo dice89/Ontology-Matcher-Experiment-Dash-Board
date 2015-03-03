@@ -1,0 +1,42 @@
+<div ng-controller="tableCtrl as ctrl" class="container">
+    <table datatable="ng"  class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>Data Set</th>
+            <th>Outlier Method</th>
+            <th>Preprocessing</th>
+            <th>Separated?</th>
+            <th>True Positives</th>
+            <th>False Positives</th>
+            <th>False Negatives</th>
+            <th>Threshold Config</th>
+            <th>Macro F1 Measure</th>
+            <th>Macro Precision</th>
+            <th>Macro Recall</th>
+            <th>Micro F1 Measure</th>
+            <th>Micro Precision</th>
+            <th>Micro Recall</th>
+            <th>Timestamp</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="result in ctrl.experiments">
+            <td>{{ result.ds_name }}</td>
+            <td>{{ result.outlier_name }}</td>
+            <td>{{ result.pre_pro_name }}</td>
+            <td>{{ result.separated }}</td>
+            <td>{{ result.tp }}</td>
+            <td>{{ result.fp }}</td>
+            <td>{{ result.fn }}</td>
+            <td>{{ result.threshold }}</td>
+            <td>{{ result.macro_result.fmeasure }}</td>
+            <td>{{ result.macro_result.precision }}</td>
+            <td>{{ result.macro_result.recall }}</td>
+            <td>{{ result.micro_result.fmeasure }}</td>
+            <td>{{ result.micro_result.precision }}</td>
+            <td>{{ result.micro_result.recall }}</td>
+            <td>{{ result.time_stamp }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
